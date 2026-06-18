@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Virtual env
+.venv/
+venv/
+env/
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# LangChain / FAISS / Data / Large files
+*.pdf
+*.faiss
+*.pkl
+*.db
+data/*
+!data/studygo/
+!data/studygo/**
+
+# Logs
+*.log
+
+# Streamlit / cache
+.streamlit/
+.cache/
