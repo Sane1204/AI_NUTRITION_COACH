@@ -26,4 +26,44 @@ Food recognition and portion estimation are approximate. Nutrition values may va
 - Better portion estimation
 - Weekly nutrition dashboard
 - Persistent cache with SQLite
+<<<<<<< HEAD
 - Meal plan generation
+=======
+- Meal plan generation
+
+## Installation Instructions
+# 1. Clone the Repository
+git clone https://github.com/Sane1204/AI_NUTRITION_COACH.git
+cd AI_NUTRITION_COACH
+# 2. Create a Virtual Environment
+python -m venv .venv
+# 3. Activate the Virtual Environment
+
+## For Windows:
+
+.venv\Scripts\activate
+
+## For Mac/Linux:
+
+source .venv/bin/activate
+# 4. Install Required Packages
+pip install -r requirements.txt
+# 5. Set Up Environment Variables
+
+Create a .env file in the project root folder.
+
+OPENAI_API_KEY=your_openai_api_key_here
+USDA_API_KEY=your_usda_api_key_here
+
+You can use .env.example as a reference.
+
+# 6. Run the Streamlit App
+streamlit run interface.py
+# 7. Open the App
+
+After running the command, Streamlit will open the app in your browser.
+
+If it does not open automatically, go to:
+
+http://localhost:8501
+>>>>>>> 5efe018fb8b0bc58a6d60f02e26f0d8b092bcb60
