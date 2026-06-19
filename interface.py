@@ -9,19 +9,14 @@ from app import (
     recomended_food,
 )
  
-# ─────────────────────────────────────────
-# Page config
-# ─────────────────────────────────────────
+
  
 st.set_page_config(
     page_title="Nutrition Coach",
     page_icon="🥗",
     layout="wide",
 )
- 
-# ─────────────────────────────────────────
-# Global CSS
-# ─────────────────────────────────────────
+
  
 st.markdown("""
 <style>
@@ -207,9 +202,7 @@ div[data-testid="stTabs"] button { font-size: 0.875rem !important; }
 </style>
 """, unsafe_allow_html=True)
  
-# ─────────────────────────────────────────
-# GPT assistant prompt
-# ─────────────────────────────────────────
+
  
 ASSISTANT_PROMPT = """
 You are a food image recognition assistant.
@@ -230,10 +223,6 @@ Rules:
 - Do not calculate calories. Only identify food and estimate grams.
 """
  
-# ─────────────────────────────────────────
-# Header
-# ─────────────────────────────────────────
- 
 st.markdown("""
 <div class="nc-header">
   <h1>🥗 Nutrition Coach</h1>
@@ -243,10 +232,7 @@ st.markdown("""
  
 st.divider()
  
-# ─────────────────────────────────────────
-# Upload + settings row
-# ─────────────────────────────────────────
- 
+
 left_col, right_col = st.columns([1, 1.6], gap="large")
  
 with left_col:
@@ -286,10 +272,7 @@ with right_col:
     st.markdown("<br>", unsafe_allow_html=True)
     analyse_btn = st.button("✦ Analyse meal", type="primary", width='stretch')
  
-# ─────────────────────────────────────────
-# Analysis
-# ─────────────────────────────────────────
- 
+
 if analyse_btn:
     if uploaded_file is None:
         st.error("Please upload a food image first.")
@@ -331,9 +314,7 @@ if analyse_btn:
     st.session_state["recommendations"] = recommendations
     st.session_state["raw_output"] = raw_output
  
-# ─────────────────────────────────────────
-# Results
-# ─────────────────────────────────────────
+
  
 if "nutrition_result" in st.session_state:
     nutrition_result = st.session_state["nutrition_result"]
@@ -346,7 +327,7 @@ if "nutrition_result" in st.session_state:
  
     tab_foods, tab_macros, tab_recs = st.tabs(["🔍 Detected foods", "📊 Macro breakdown", "✨ Recommendations"])
  
-    # ── Tab 1: Detected foods ─────────────────
+ 
     with tab_foods:
         items = nutrition_result.get("items", [])
  
@@ -388,7 +369,7 @@ if "nutrition_result" in st.session_state:
         with st.expander("Raw model output"):
             st.code(raw_output)
  
-    # ── Tab 2: Macro breakdown ────────────────
+    
     with tab_macros:
         st.markdown('<div class="sec-label">This meal</div>', unsafe_allow_html=True)
         st.markdown(f"""
@@ -443,7 +424,7 @@ if "nutrition_result" in st.session_state:
             unsafe_allow_html=True,
         )
  
-    # ── Tab 3: Recommendations ───────────────
+    
     with tab_recs:
         if recommendations:
             # Render 2-column card grid in pairs
@@ -467,7 +448,7 @@ if "nutrition_result" in st.session_state:
         else:
             st.info("No recommendations found. Try adjusting your macro targets.")
  
-    # ── Disclaimer ────────────────────────────
+    
     st.markdown("""
     <div class="disclaimer">
       ℹ Nutritional values are estimates based on general food data. Actual amounts vary by preparation,
