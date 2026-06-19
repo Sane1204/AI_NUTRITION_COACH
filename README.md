@@ -28,24 +28,24 @@ Food recognition and portion estimation are approximate. Nutrition values may va
 - Persistent cache with SQLite
 - Meal plan generation
 
-##Installation Instructions
-#1. Clone the Repository
+## Installation Instructions
+# 1. Clone the Repository
 git clone https://github.com/Sane1204/AI_NUTRITION_COACH.git
 cd AI_NUTRITION_COACH
-#2. Create a Virtual Environment
+# 2. Create a Virtual Environment
 python -m venv .venv
-#3. Activate the Virtual Environment
+# 3. Activate the Virtual Environment
 
-##For Windows:
+## For Windows:
 
 .venv\Scripts\activate
 
-##For Mac/Linux:
+## For Mac/Linux:
 
 source .venv/bin/activate
-#4. Install Required Packages
+# 4. Install Required Packages
 pip install -r requirements.txt
-#5. Set Up Environment Variables
+# 5. Set Up Environment Variables
 
 Create a .env file in the project root folder.
 
@@ -54,9 +54,9 @@ USDA_API_KEY=your_usda_api_key_here
 
 You can use .env.example as a reference.
 
-#6. Run the Streamlit App
+# 6. Run the Streamlit App
 streamlit run interface.py
-#7. Open the App
+# 7. Open the App
 
 After running the command, Streamlit will open the app in your browser.
 
